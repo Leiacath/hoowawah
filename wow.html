@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let us help Sitio Bebe</title>
+    <link rel="stylesheet" href="thisis.css">
+    <style>
+
+        header ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            min-width: 180px;
+            flex-direction: column;
+        }
+        header ul li ul li a {
+            margin: 0;
+            padding: 10px 20px;
+            display: block;
+            color: #000000;
+        }
+        header ul li:hover ul {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            background: #fff;
+            height: 3px;
+            margin: 5px 0;
+            width: 25px;
+            transition: 0.4s;
+        }
+
+        .outline {
+            background: rgba(255,255,255,0.9);
+            margin: 100px auto;
+            padding: 40px;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+        .outline h2 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+        .outline p, .outline li {
+            font-size: 1em;
+            color: #444;
+            margin-bottom: 10px;
+        }
+        .outline ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 50px;
+            }
+            header ul {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: rgba(255, 255, 255, 0.9);
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+            header ul.active {
+                display: flex;
+            }
+            header ul li {
+                text-align: center;
+                width: 100%;
+            }
+            header ul li a {
+                margin: 15px 0;
+                color: #fff;
+            }
+            header ul li ul {
+                position: static;
+                display: none;
+                background: rgba(50,50,50,0.9);
+                width: 100%;
+            }
+            header ul li.show > ul {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+
+            header.sticky .menu-toggle span {
+                background: #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">GROUP 5</a>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul id="nav-menu">
+            <li><a href="#">The problems</a>
+                <ul>
+                    <li><a href="#">The lack of medical professionals/or medical supplies in Sitio Bebe, because of this locals often get sick.</a></li>
+                    <li><a href="#">Dirty water is also a problem as it is unhealthy for the locals</a></li>
+                    <li><a href="#">Closing of mining jobs and factories resulted in most of the locals losing their jobs.</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Our plan of solution</a>
+                <ul>
+                    <li><a href="#">To fix the lack of professionals or medical supplies, we will have a training program and teach healthcare to the locals.</a></li>
+                    <li><a href="#">While to fix the lack of dirty water we will implant new water tanks and having water filters to fix the dirty water problem.</a></li>
+                    <li><a href="#">For the last problem, we will give the opportunity for those who lost their jobs a new one.</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Providing support</a>
+                <ul>
+                    <li><a href="#">To provide donations, please refer to the following:</a></li>
+                    <li><a href="#">Volunteering would help.</a></li>
+                    <li><a href="#">Donating to charity livestreams of streamers that helps us spread this information.</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+    
+    <section class="banner"></section>
+
+    <section class="outline">
+        <h2>Outline</h2>
+        <p><strong>Chosen category:</strong> Gaming (or Streaming)</p>
+        <ul>
+            <li>There are a lot of gamers who stream themselves playing games to raise funds for specific charities. Gaming can be a reliable source of non-profit fundraising as there is already a widely known stream-focused platform; Twitch.</li>
+            <li>There are tools in Twitch that let viewer’s contributions go directly to the charities, that helps reduce the viewer’s doubts, confusions, and even legal requirements.</li>
+            <li>Another streaming platform is YouTube.</li>
+        </ul>
+
+        <p><strong>Target audience:</strong> Young adults and Adults</p>
+        <ul>
+            <li>Most adults have jobs or are employed, so they can donate money for the charity streams that the influencers established in order to help the situation in Sitio Bebe.</li>
+            <li>They’re not wasting &amp; squandering money, rather, they’re simply assisting streamers in earning money because streaming may be considered as a job.</li>
+            <li>In this method, the problem of Sitio Bebe may be resolved faster with the influence of gamers.</li>
+        </ul>
+
+        <p><strong>Needs to be addressed:</strong></p>
+        <ul>
+            <li>Lack of medical professionals/or medical supplies in Sitio Bebe, because of this locals often get sick.</li>
+            <li>Dirty water is also a problem as it is unhealthy for the locals (by implanting new water tanks and having water filters to fix the dirty water problem).</li>
+            <li>Closing of mining jobs and factories resulted in most of the locals losing their jobs.</li>
+        </ul>
+    </section>
+
+<footer>
+   <p>© 2025 Group 5 Life Labs. All rights reserved.</p>
+</footer>
+
+    <script>
+       
+        window.addEventListener("scroll", function(){
+            var header = document.querySelector("header");
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+
+        
+        const menuToggle = document.getElementById("menu-toggle");
+        const navMenu = document.getElementById("nav-menu");
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll("#nav-menu > li > a").forEach(link => {
+            link.addEventListener("click", e => {
+                if (window.innerWidth <= 768) {
+                    const parentLi = e.target.parentElement;
+                    if (parentLi.querySelector("ul")) {
+                        e.preventDefault(); 
+                        parentLi.classList.toggle("show");
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
